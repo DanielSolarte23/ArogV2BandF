@@ -1,9 +1,19 @@
+import { BrowserRouter } from "react-router-dom";
+import { AuthProvider } from "./context/AuthContext";
 import RutasPublics from "./routes/RoutesPublics";
 
-export default function App() {
+
+function App() {
   return (
-    <>
-      <RutasPublics />
-    </>
+    <AuthProvider>
+      <BrowserRouter>
+        <main className="mx-auto">
+          {/* Renderiza RutasPublics que maneja la lógica */}
+          <RutasPublics />
+        </main>
+      </BrowserRouter>
+    </AuthProvider>
   );
 }
+
+export default App;
