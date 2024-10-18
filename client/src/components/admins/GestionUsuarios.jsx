@@ -16,7 +16,7 @@ export default function GestionUsuarios(){
   ];
 
   return (
-    <div className="p-4 h-full max-h-full ">
+    <div className="p-4 h-full max-h-full">
       <div className="flex justify-between mb-2">
         <select className="border border-gray-300 rounded p-2">
           <option>Filtro por</option>

@@ -3,9 +3,9 @@ import React from 'react'
 export default function ListaTareas() {
     
   return (
-    <div className='flex w-2/3  h-full'>
-    <div className="overflow-x-auto shadow-md w-full ">
-        <div className="flex items-center justify-between flex-column flex-wrap md:flex-row space-y-4 md:space-y-0 pb-4 bg-white dark:bg-gray-300">
+    <div className='flex w-2/3 h-full rounded-lg'>
+    <div className="overflow-x-auto shadow-md w-full rounded-lg">
+        <div className="flex items-center justify-between flex-column flex-wrap md:flex-row space-y-4 md:space-y-0 pb-4 bg-white dark:bg-gray-300 rounded-t-lg">
             <div>
                 <button id="dropdownActionButton" data-dropdown-toggle="dropdownAction" className="inline-flex items-center text-gray-500 bg-black border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-sm px-3 py-1.5 dark:bg-slate-200 dark:text-gray-400 dark:border-gray-600 dark:hover:bg-gray-200 dark:hover:border-gray-600 dark:focus:ring-gray-700 mt-6 ml-6" type="button">
                     <span className="sr-only">Action button</span>

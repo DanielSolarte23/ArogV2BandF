@@ -3,7 +3,7 @@ import Maps from "../../images/Maps.png"
 
 export default function Rutas () {
   return (
-    <div className="flex flex-col w-full h-[90%]">
+    <div className="flex flex-col w-full h-full ">
       <header className="flex items-center h-12 px-4  justify-between border-b shrink-0 md:px-6">
         <button className="inline-flex items-center bg-verde-principal justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 mr-4">
           + Añadir Ruta

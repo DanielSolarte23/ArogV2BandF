@@ -1,8 +1,8 @@
 
 export default function RegistroIncidentes(){
     return(
-        <main className="flex items-center justify-center w-full bg-gray-100 ">
-        <div className="w-full p-4 text-sm bg-white shadow-md rounded">
+        <main className="flex items-center justify-center w-full">
+        <div className="w-full p-4 text-sm bg-white">
           <h2 className="text-lg font-bold mb-3 text-center">Registro de Incidente</h2>
           <form>
             <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">

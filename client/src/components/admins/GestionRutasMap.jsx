@@ -5,7 +5,7 @@ import HistorialEnRuta from "./HistorialEnRuta";
 
 export default function Maps() {
   return (
-    <div className="h-full ">
+    <div className="h-full">
       <header className="h-[10%] pl-16 flex justify-between px-5 items-center">
         <div className="flex gap-4">
           <button className="bg-verde-principal px-5 py-3 rounded-xl flex justify-center font-semibold text-base h-full">

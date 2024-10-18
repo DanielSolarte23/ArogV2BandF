@@ -12,15 +12,19 @@ export default function PPage() {
     <main className="w-full h-screen box-border m-0 flex flex-col">
       <header className="w-full h-[12%] shadow-lg flex items-center justify-between px-6 py-1">
         <img className="h-full" src={LogoArog} alt="Logo Arog" />
-        <Link to="."><div className="flex h-1/3 items-center gap-2">
-          <p className="text-lg font-medium text-gray-600">{user.nombre}</p>
-          <i className="fa-solid fa-user-large text-white bg-verde-principal p-4 rounded-full"></i>
-        </div></Link>
+        <Link to=".">
+          <div className="flex h-1/3 items-center gap-2">
+            <p className="text-lg font-medium text-gray-600">{user.nombre}</p>
+            <i className="fa-solid fa-user-large text-white bg-verde-principal p-4 rounded-full"></i>
+          </div>
+        </Link>
       </header>
       <div className="flex h-[88%]">
         <BarraLateral />
-        <div className="flex-1 overflow-auto py-2 pr-2 h-full w-4/5">
-        <Outlet />
+        <div className="flex-1 overflow-auto py-2 px-2 h-full w-4/5 border-2">
+          <div className="w-full h-full border-2 border-zinc-100 rounded-lg p-2 bg-white shadow-xl">
+            <Outlet />
+          </div>
         </div>
       </div>
     </main>

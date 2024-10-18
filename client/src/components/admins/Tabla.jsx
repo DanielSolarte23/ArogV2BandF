@@ -54,12 +54,12 @@ const Tabla = () => {
    let fondo = document.querySelector('body')
    console.log(fondo);
 
-   fondo.style.backgroundColor= "#d1d4d17c"
+   fondo.style.backgroundColor= "#ffffff"
   return (
-    <div className="box-border h-full">
+    <div className="box-border h-full rounded-lg">
       
 
-      <table className="w-full border-collapse border-2 border-gray-500">
+      <table className="w-full border-collapse">
         <thead>
           <tr className="bg-gray-200 text-gray-700  font-normal text-center">
             <th className="py-2 px-1 text-sm"></th>
