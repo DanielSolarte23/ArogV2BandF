@@ -5,7 +5,7 @@ export const conectDB = async () => {
   // esta funcion va a englobada en en un try cath para manejar errores y que no se nos caiga el servidor
   try {
     //await con el async y conecta a la base de datos en local host del mongo DB
-    await mongoose.connect("mongodb+srv://DanSol:Dansol23@cluster0.miuyw.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0");
+    await mongoose.connect("mongodb://localhost:27017/Arog");
     // MUestra el mensaje en consola
     console.log(">>> Conectado a mongo");
     //y el catch maneja el error ademas de mostrarlo en consola

@@ -18,7 +18,7 @@ export default function FormInicio() {
 
   const navigate = useNavigate();
   useEffect(() => {
-    if (isAuthenticated) navigate("/PPage");
+    if (isAuthenticated) navigate("/perfil-admin");
   }, [isAuthenticated, navigate]);
   return (
     <div className="w-full p-5 sm:w-full sm:h-screen md:h-screen h-screen lg:w-2/4 flex flex-col sm:justify-center xl:px-14 md:w-full">

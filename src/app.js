@@ -5,6 +5,7 @@ import cors from "cors"; // Importa CORS para permitir solicitudes entre diferen
 
 import authRoutes from './routes/auth.routes.js'; // Importa las rutas de autenticación
 import taskRoutes from "./routes/task.routes.js"; // Importa las rutas de tareas
+import routeRoutes from "./routes/ruta.routes.js"
 
 const app = express(); // Crea una instancia de la aplicación Express
 
@@ -28,5 +29,7 @@ app.use("/api", authRoutes);
 
 // Configura las rutas de tareas para que se manejen bajo el prefijo "/api"
 app.use("/api", taskRoutes);
+
+app.use("/api", routeRoutes);
 
 export default app; // Exporta la aplicación Express para su uso en otras partes de la aplicación

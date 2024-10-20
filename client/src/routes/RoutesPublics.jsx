@@ -39,7 +39,7 @@ export default function RutasPublics() {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Registro />} />
         <Route element={<ProtectedRoute />}>
-          <Route path='PPage' element={<PPage />}>
+          <Route path='perfil-admin' element={<PPage />}>
             <Route index element={<Perfil />} />
             <Route path="Rutas" element={<Rutas />} />
             <Route path="Tareas" element={<AsignacionTareas />} />
