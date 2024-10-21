@@ -14,20 +14,7 @@ export const getRutas = async (req, res) => {
 export const crearRuta = async (req, res) => {
     try {
         // Extrae los datos del cuerpo de la solicitud
-        const { nombreRuta, origen, destino, duracion, distancia, paradas, horarios, funcionarioId } = req.body;
-
-        // Verifica si el funcionarioId es proporcionado y si es válido
-        if (!funcionarioId) {
-            return res.status(400).json({ message: "El ID del funcionario es requerido" });
-        }
-
-        // Busca el funcionario por el ID proporcionado
-        const funcionario = await User.findById(funcionarioId);
-
-        // Verifica si el funcionario existe
-        if (!funcionario) {
-            return res.status(404).json({ message: "Funcionario no encontrado" });
-        }
+        const { nombreRuta, origen, destino, duracion, distancia, paradas, horarios } = req.body;
 
         // Crea una nueva ruta con los datos recibidos y el ID del funcionario
         const nuevaRuta = new Ruta({
@@ -37,8 +24,7 @@ export const crearRuta = async (req, res) => {
             duracion,
             distancia,
             paradas,
-            horarios,
-            funcionarioId: funcionarioId // Asigna la ruta al funcionario especificado
+            horarios
         });
 
         // Guarda la nueva ruta en la base de datos
@@ -50,6 +36,8 @@ export const crearRuta = async (req, res) => {
     } catch (error) {
         // En caso de error, devuelve un mensaje con status 500 (error del servidor)
         return res.status(500).json({ message: "Algo fue mal", error: error.message });
+        console.log(error);
+        
     }
 };
 

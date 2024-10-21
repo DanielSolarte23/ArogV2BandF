@@ -3,7 +3,6 @@ import HomePagina from "../pages/publicas/Home-Page";
 import Login from "../pages/publicas/InicioS-Page";
 import Registro from "../pages/publicas/Registro-Page";
 import PPage from "../pages/Admin/PPComponent";
-// import BarraLateral from '../components/admins/BarraLateral';
 import Rutas from "../components/admins/Rutas";
 import Perfil from "../components/admins/Perfil";
 import AsignacionTareas from "../pages/Admin/AsignacionTareas";
@@ -13,14 +12,9 @@ import RegistroIncidentes from "../components/admins/Regisincidencia";
 import Pagos from "../components/admins/Pagos";
 import Estadisticas from "../components/admins/Estadisticas";
 import ImageGallery from "../components/admins/ImgGaleria";
-// import {AuthProvider} from '../context/AuthContext';
 import ProtectedRoute from "../ProtectedRouter";
 import Encabezado from "../components/publicas/Encabezado";
-// import { TaskProvider } from "../context/";
-// import ProtectedRoute from "../ProtectedRouter";
-// Crea un componente que maneje la lógica del encabezado
-
-
+// import { Outlet } from "react-router-dom";
 
 export default function RutasPublics() {
   const location = useLocation();
@@ -38,10 +32,13 @@ export default function RutasPublics() {
         <Route path="/" element={<HomePagina />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Registro />} />
+        
+        {/* Rutas protegidas */}
         <Route element={<ProtectedRoute />}>
           <Route path='perfil-admin' element={<PPage />}>
+            {/* El Outlet será usado para renderizar las rutas anidadas */}
             <Route index element={<Perfil />} />
-            <Route path="Rutas" element={<Rutas />} />
+            <Route path="rutas" element={<Rutas />} />
             <Route path="Tareas" element={<AsignacionTareas />} />
             <Route path="Usuarios" element={<GestionUsuarios />} />
             <Route path="Pagos" element={<Pagos />} />

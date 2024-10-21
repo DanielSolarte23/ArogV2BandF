@@ -24,15 +24,11 @@ const routesSchema = new mongoose.Schema({
         type: Number,
         required: true
     },
-    paradas: [
-        {
-            nombre: {
-                type: String,
-                required: true,
-                enum: ['Calle 1', 'Calle 2', 'Calle 3', 'Galeria la esmeralda', 'Galeria barrio bolivar', 'Galeria la 13']
-            }
-        }
-    ],
+    paradas: {
+        type: String,
+        required: true,
+        enum: ['Calle 1', 'Calle 2', 'Calle 3', 'Galeria la esmeralda', 'Galeria barrio bolivar', 'Galeria la 13']
+    },
     horarios: [
         {
             dia: {
@@ -52,7 +48,7 @@ const routesSchema = new mongoose.Schema({
     funcionarioId: {
         type: mongoose.Schema.Types.ObjectId,  // Referencia al ID de un funcionario (Usuario)
         ref: "User",
-        required: true
+        required: false
     }
 });
 

@@ -32,14 +32,18 @@ export function RutasProvider({ children }) {
     }
   };
 
-  const createRuta = async (ruta) => {
+  const createRuta = async (ruta) => { 
     try {
       const res = await createRutaRequest(ruta);
       console.log(res);
     } catch (error) {
+      console.error('Error:', error.response ? error.response.data : error.message);
       console.log(error);
+      
     }
   };
+  
+
 
   const deleteRuta = async (id) => {
     try {

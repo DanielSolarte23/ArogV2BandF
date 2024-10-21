@@ -27,7 +27,8 @@ const RutaSchema = z.object({
             invalid_type_error: "La hora de llegada debe ser una fecha válida"
         }))
     })).min(1, "Debe haber al menos un horario"),
-    funcionarioId: z.string().min(1, "El ID del funcionario es requerido")
+    funcionarioId: z.string().min(1, "El ID del puede ser requerido").optional() // Cambiado a opcional
 });
 
 export default RutaSchema;
+

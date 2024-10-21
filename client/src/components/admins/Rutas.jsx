@@ -1,11 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Maps from "../../images/Maps.png"
+import Modal from './Modal';
+import RutaForm from './RutaForm';
 
-export default function Rutas () {
+export default function Rutas() {
+
+  const [IsOpen, setIsOpen] = useState(false)
+ 
+  const openModal = () => setIsOpen(true);
+  const closeModal = () => setIsOpen(false);
+
   return (
     <div className="flex flex-col w-full h-full ">
+      <Modal isOpen={IsOpen} onClose={closeModal}>
+        <RutaForm onClose={closeModal} />
+      </Modal>
       <header className="flex items-center h-12 px-4  justify-between border-b shrink-0 md:px-6">
-        <button className="inline-flex items-center bg-verde-principal justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 mr-4">
+        <button onClick={openModal} className="inline-flex items-center bg-verde-principal justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 mr-4">
           + Añadir Ruta
         </button>
         <nav className="flex flex-row items-center gap-4 text-sm font-medium">
@@ -20,73 +31,69 @@ export default function Rutas () {
           </a>
         </nav>
         <div className="flex items-center w-full gap-4 ml-auto relative">
-          <input
-            className="flex h-10 w-full ml-2 rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 pl-8 sm:w-[100px] md:w-[200px] lg:w-[300px]"
-            placeholder="Filtrar por fecha"
-            type="search"
-          />
+          
 
         </div>
       </header>
       <main className="flex flex-col p-1">
         <div className="flex flex-row  gap-4 ">
           <div className="flex flex-col justify-between  w-2/5">
-          <div>
-            <div className="flex items-center justify-between p-2 border-b">
-              <span>Nombre de la ruta</span>
-              <span>Funcionario</span>
-              <span>Vehiculo</span>
-            </div>
-            <div className="flex flex-col">
+            <div>
               <div className="flex items-center justify-between p-2 border-b">
-                <button
-                  type="button"
-                  role="checkbox"
-                  aria-checked="false"
-                  data-state="unchecked"
-                  value="on"
-                  className="peer h-4 w-4 shrink-0 rounded-sm border border-primary ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground"
-                  id="ruta1"
-                ></button>
-                <label htmlFor="ruta1" className="flex-1 ml-2">
-                  Aida Lucia
-                </label>
+                <span>Nombre de la ruta</span>
                 <span>Funcionario</span>
-                <span>CPI681</span>
+                <span>Vehiculo</span>
               </div>
-              <div className="flex items-center  justify-between p-2 border-b">
-                <button
-                  type="button"
-                  role="checkbox"
-                  aria-checked="false"
-                  data-state="unchecked"
-                  value="on"
-                  className="peer h-4 w-4 shrink-0 rounded-sm border border-primary ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground"
-                  id="ruta2"
-                ></button>
-                <label htmlFor="ruta2" className="flex-1 ml-2">
-                  Barrio Bolivar
-                </label>
-                <span>Funcionario</span>
-                <span>CPI681</span>
+              <div className="flex flex-col">
+                <div className="flex items-center justify-between p-2 border-b">
+                  <button
+                    type="button"
+                    role="checkbox"
+                    aria-checked="false"
+                    data-state="unchecked"
+                    value="on"
+                    className="peer h-4 w-4 shrink-0 rounded-sm border border-primary ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground"
+                    id="ruta1"
+                  ></button>
+                  <label htmlFor="ruta1" className="flex-1 ml-2">
+                    Aida Lucia
+                  </label>
+                  <span>Funcionario</span>
+                  <span>CPI681</span>
+                </div>
+                <div className="flex items-center  justify-between p-2 border-b">
+                  <button
+                    type="button"
+                    role="checkbox"
+                    aria-checked="false"
+                    data-state="unchecked"
+                    value="on"
+                    className="peer h-4 w-4 shrink-0 rounded-sm border border-primary ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground"
+                    id="ruta2"
+                  ></button>
+                  <label htmlFor="ruta2" className="flex-1 ml-2">
+                    Barrio Bolivar
+                  </label>
+                  <span>Funcionario</span>
+                  <span>CPI681</span>
+                </div>
+                <div className="flex items-center  justify-between p-2 border-b">
+                  <button
+                    type="button"
+                    role="checkbox"
+                    aria-checked="false"
+                    data-state="unchecked"
+                    value="on"
+                    className="peer h-4 w-4 shrink-0 rounded-sm border border-primary ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground"
+                    id="ruta3"
+                  ></button>
+                  <label htmlFor="ruta3" className="flex-1 ml-2">
+                    Galeria la esmeralda
+                  </label>
+                  <span>Funcionario</span>
+                  <span>CPI681</span>
+                </div>
               </div>
-              <div className="flex items-center  justify-between p-2 border-b">
-                <button
-                  type="button"
-                  role="checkbox"
-                  aria-checked="false"
-                  data-state="unchecked"
-                  value="on"
-                  className="peer h-4 w-4 shrink-0 rounded-sm border border-primary ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground"
-                  id="ruta3"
-                ></button>
-                <label htmlFor="ruta3" className="flex-1 ml-2">
-                  Galeria la esmeralda
-                </label>
-                <span>Funcionario</span>
-                <span>CPI681</span>
-              </div>
-            </div>
             </div>
             <div className="p-2 border-t">3 Rutas seleccionadas</div>
           </div>
